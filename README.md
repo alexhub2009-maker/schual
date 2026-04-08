@@ -1,198 +1,52 @@
-# markdownexample
+# Velox API
 
-Ein fiktives Python-Projekt zur Demonstration eines **GitHub-Repositories** und der wichtigsten **Markdown-Befehle**.
+**A lightweight REST API built with FastAPI**
 
----
+![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue)
+![FastAPI 0.111](https://img.shields.io/badge/FastAPI-0.111-green)
+![License MIT](https://img.shields.io/badge/License-MIT-red)
 
-## 📌 Projektbeschreibung
-
-Dieses Repository dient als Beispielprojekt, um zu zeigen:
-
-* wie ein GitHub-Repository erstellt wird
-* wie eine `README.md` aufgebaut ist
-* wie Markdown-Syntax funktioniert
-* wie typische Git- und Python-Befehle verwendet werden
+A minimal REST API for user authentication and resource management. No unnecessary dependencies, no bloat.
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ```bash
-# Repository klonen
-git clone https://github.com/username/markdownexample.git
-
-# In Projektordner wechseln
-cd markdownexample
-
-# Virtuelle Umgebung erstellen
-python -m venv venv
-
-# Virtuelle Umgebung aktivieren
-# Windows
-venv\Scripts\activate
-
-# macOS / Linux
-source venv/bin/activate
-
-# Abhängigkeiten installieren
+git clone https://github.com/yourname/velox-api.git
+cd velox-api
 pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+API runs at `http://localhost:8000` · Docs at `/docs`
+
+---
+
+## Endpoints
+
+| Method | Endpoint      | Description      |
+|--------|---------------|------------------|
+| POST   | /auth/login   | Obtain JWT token |
+| GET    | /users/me     | Get current user |
+| GET    | /items/{id}   | Retrieve item    |
+
+---
+
+## Project Structure
+
+```
+velox-api/
+├── app/
+│   ├── main.py        # Entry point
+│   ├── routers/       # Route definitions
+│   ├── models/        # Database models
+│   └── schemas/       # Pydantic schemas
+└── requirements.txt
 ```
 
 ---
 
-## ▶️ Projekt starten
+## Contributing
 
-```bash
-python main.py
-```
-
----
-
-## 🧾 Markdown Cheat-Sheet
-
-### Überschriften
-
-```markdown
-# H1
-## H2
-### H3
-```
-
----
-
-### Textformatierung
-
-```markdown
-**Fett**
-*Kursiv*
-~~Durchgestrichen~~
-`Inline Code`
-```
-
-**Beispiele:**
-
-* **Fett**
-* *Kursiv*
-* ~~Durchgestrichen~~
-* `Inline Code`
-
----
-
-### Listen
-
-**Ungeordnete Liste**
-
-```markdown
-- Punkt 1
-- Punkt 2
-  - Unterpunkt
-```
-
-**Geordnete Liste**
-
-```markdown
-1. Erster Punkt
-2. Zweiter Punkt
-```
-
----
-
-### Links & Bilder
-
-```markdown
-[GitHub](https://github.com)
-
-![Bildbeschreibung](image.png)
-```
-
----
-
-### Codeblöcke
-
-````markdown
-```python
-print("Hello World")
-````
-
-````
-
----
-
-### Tabellen
-
-```markdown
-| Name | Rolle |
-|------|-------|
-| Max  | Dev   |
-| Anna | PM    |
-````
-
-| Name | Rolle |
-| ---- | ----- |
-| Max  | Dev   |
-| Anna | PM    |
-
----
-
-### Zitate
-
-```markdown
-> Das ist ein Zitat.
-```
-
-> Das ist ein Zitat.
-
----
-
-### Checklisten
-
-```markdown
-- [x] Aufgabe erledigt
-- [ ] Aufgabe offen
-```
-
-* [x] Aufgabe erledigt
-* [ ] Aufgabe offen
-
----
-
-## 🌱 Git Cheat-Sheet
-
-```bash
-# Status anzeigen
-git status
-
-# Änderungen hinzufügen
-git add .
-
-# Commit erstellen
-git commit -m "Initial commit"
-
-# Branch erstellen
-git branch feature
-
-# Branch wechseln
-git checkout feature
-
-# Push zu GitHub
-git push origin main
-```
-
----
-
-## 📁 Projektstruktur
-
-```
-markdownexample/
-│
-├── main.py
-├── requirements.txt
-├── README.md
-└── venv/
-```
-
----
-
-## 👨‍💻 Autor
-
-Beispielprojekt für Lernzwecke.
+Fork → branch → commit → pull request. Issues welcome.
